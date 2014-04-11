@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+    <link rel='stylesheet' href='css/style.css' />
+    <link rel='stylesheet' href='css/taskmanager.css' />
+</script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <h1 class="navbar-title"><a href="/">Task Manager</a></h1>
+        </div>
+    </div>
+    <div class="wrapper white">
+        <div class="container">
+            <form class="add-task-form" id="add-task-form" method="post" action="/task/add">
+                <label class="section-title">Enter Task</label>
+                <textarea name="desc" id="desc" class="desc"></textarea>
+                <button type="submit" class="btn">Save</button>
+            </form>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="task-list clearfix" id="task-list">
+                <div class="column">
+                    <h2 class="section-title">Pending</h2>
+                    <ol id="pending-task-list" class="list-container drop pending"></ol>
+                </div>
+                <div class="column">
+                    <h2 class="section-title">In Progress</h2>
+                    <ol id="progress-task-list" class="list-container drop progress"></ol>
+                </div>
+                <div class="column">
+                    <h2 class="section-title">Completed</h2>
+                    <ol id="completed-task-list" class="list-container drop completed"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/util/DomUtil.js"></script>
+    <script src="js/models/Task.js"></script>
+    <script src="js/collections/TaskList.js"></script>
+    <script src="js/TaskManager.js"></script>
+    <script>
+        TaskManager();
+    </script>
+</body>
+</html>
